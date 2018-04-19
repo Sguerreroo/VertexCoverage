@@ -3,12 +3,18 @@ import java.util.List;
 
 public class Graph {
 
+    private String name;
     private int numberOfVertex;
     private List<Edge> edgeList;
 
-    public Graph(int nodes, List<Edge> edgeList) {
+    public Graph(int nodes, List<Edge> edgeList, String name) {
         this.edgeList = edgeList;
         this.numberOfVertex = nodes;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getNumberOfVertex() {
@@ -43,6 +49,5 @@ public class Graph {
     public boolean isConnected(int u, int v) {
         return edgeList.contains(new Edge(u, v));
     }
-
 }
 
